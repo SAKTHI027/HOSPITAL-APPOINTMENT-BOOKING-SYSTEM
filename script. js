@@ -1,92 +1,63 @@
-// Store appointments
-let appointments = [];
+package com.hospital;
 
-// Form Submit
-document.addEventListener("DOMContentLoaded", () => {
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.*;
 
-    const form = document.querySelector(".appointment-form");
+import java.util.ArrayList;
+import java.util.List;
 
-    form.addEventListener("submit", function(event) {
+@SpringBootApplication
+@RestController
+@RequestMapping("/appointments")
+@CrossOrigin("*")
+public class HospitalApplication {
 
-        event.preventDefault();
+    public static void main(String[] args) {
+        SpringApplication.run(HospitalApplication.class, args);
+    }
 
-        const patientName =
-            document.querySelector('input[type="text"]').value;
+    private final List<Appointment> appointments = new ArrayList<>();
 
-        const email =
-            document.querySelector('input[type="email"]').value;
+    @PostMapping
+    public String bookAppointment(@RequestBody Appointment appointment) {
+        appointments.add(appointment);
+        return "Appointment Booked Successfully";
+    }
 
-        const doctor =
-            document.querySelector("select").value;
+    @GetMapping
+    public List<Appointment> getAppointments() {
+        return appointments;
+    }
 
-        const date =
-            document.querySelector('input[type="date"]').value;
+    static class Appointment {
 
-        const time =
-            document.querySelector('input[type="time"]').value;
+        private String patientName;
+        private String doctorName;
+        private String appointmentDate;
 
-        const appointment = {
-            patientName,
-            email,
-            doctor,
-            date,
-            time,
-            status: "Pending"
-        };
+        public String getPatientName() {
+            return patientName;
+        }
 
-        appointments.push(appointment);
+        public void setPatientName(String patientName) {
+            this.patientName = patientName;
+        }
 
-        alert(
-            "Appointment Booked Successfully!\n\n" +
-            "Patient: " + patientName +
-            "\nDoctor: " + doctor +
-            "\nDate: " + date +
-            "\nTime: " + time
-        );
+        public String getDoctorName() {
+            return doctorName;
+        }
 
-        console.log(appointments);
+        public void setDoctorName(String doctorName) {
+            this.doctorName = doctorName;
+        }
 
-        form.reset();
+        public String getAppointmentDate() {
+            return appointmentDate;
+        }
 
-        displayAppointments();
-    });
-});
-
-// Display Appointments
-function displayAppointments() {
-
-    let output =
-        document.getElementById("appointmentList");
-
-    if (!output) return;
-
-    output.innerHTML = "";
-
-    appointments.forEach((a, index) => {
-
-        output.innerHTML += `
-        <div style="
-            background:white;
-            padding:10px;
-            margin:10px;
-            border-radius:5px;
-            box-shadow:0 0 5px gray;">
-            
-            <h3>Appointment ${index + 1}</h3>
-
-            <p><b>Patient:</b> ${a.patientName}</p>
-
-            <p><b>Email:</b> ${a.email}</p>
-
-            <p><b>Doctor:</b> ${a.doctor}</p>
-
-            <p><b>Date:</b> ${a.date}</p>
-
-            <p><b>Time:</b> ${a.time}</p>
-
-            <p><b>Status:</b> ${a.status}</p>
-
-        </div>
-        `;
-    });
+        public void setAppointmentDate(String appointmentDate) {
+            this.appointmentDate = appointmentDate;
+        }
+    }
 }
