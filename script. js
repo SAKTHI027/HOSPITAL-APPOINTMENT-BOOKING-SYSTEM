@@ -1,12 +1,92 @@
-package com.hospital;
+// Store appointments
+let appointments = [];
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+// Form Submit
+document.addEventListener("DOMContentLoaded", () => {
 
-@SpringBootApplication
-public class HospitalApplication {
+    const form = document.querySelector(".appointment-form");
 
-    public static void main(String[] args) {
-        SpringApplication.run(HospitalApplication.class, args);
-    }
+    form.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const patientName =
+            document.querySelector('input[type="text"]').value;
+
+        const email =
+            document.querySelector('input[type="email"]').value;
+
+        const doctor =
+            document.querySelector("select").value;
+
+        const date =
+            document.querySelector('input[type="date"]').value;
+
+        const time =
+            document.querySelector('input[type="time"]').value;
+
+        const appointment = {
+            patientName,
+            email,
+            doctor,
+            date,
+            time,
+            status: "Pending"
+        };
+
+        appointments.push(appointment);
+
+        alert(
+            "Appointment Booked Successfully!\n\n" +
+            "Patient: " + patientName +
+            "\nDoctor: " + doctor +
+            "\nDate: " + date +
+            "\nTime: " + time
+        );
+
+        console.log(appointments);
+
+        form.reset();
+
+        displayAppointments();
+    });
+});
+
+// Display Appointments
+function displayAppointments() {
+
+    let output =
+        document.getElementById("appointmentList");
+
+    if (!output) return;
+
+    output.innerHTML = "";
+
+    appointments.forEach((a, index) => {
+
+        output.innerHTML += `
+        <div style="
+            background:white;
+            padding:10px;
+            margin:10px;
+            border-radius:5px;
+            box-shadow:0 0 5px gray;">
+            
+            <h3>Appointment ${index + 1}</h3>
+
+            <p><b>Patient:</b> ${a.patientName}</p>
+
+            <p><b>Email:</b> ${a.email}</p>
+
+            <p><b>Doctor:</b> ${a.doctor}</p>
+
+            <p><b>Date:</b> ${a.date}</p>
+
+            <p><b>Time:</b> ${a.time}</p>
+
+            <p><b>Status:</b> ${a.status}</p>
+
+        </div>
+        `;
+    });
 }
