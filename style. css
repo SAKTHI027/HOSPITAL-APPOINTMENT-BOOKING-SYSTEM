@@ -3,77 +3,97 @@ CREATE DATABASE hospital_db;
 
 USE hospital_db;
 
--- ==========================
+-- =====================
 -- PATIENT TABLE
--- ==========================
+-- =====================
 
 CREATE TABLE patients (
     patient_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
-    phone VARCHAR(15),
+    phone VARCHAR(15) NOT NULL,
     password VARCHAR(255) NOT NULL
 );
 
--- ==========================
+-- =====================
 -- DOCTOR TABLE
--- ==========================
+-- =====================
 
 CREATE TABLE doctors (
     doctor_id INT AUTO_INCREMENT PRIMARY KEY,
     doctor_name VARCHAR(100) NOT NULL,
-    specialization VARCHAR(100),
-    availability VARCHAR(100)
+    specialization VARCHAR(100) NOT NULL,
+    availability VARCHAR(100) NOT NULL
 );
 
--- ==========================
+-- =====================
 -- APPOINTMENT TABLE
--- ==========================
+-- =====================
 
 CREATE TABLE appointments (
     appointment_id INT AUTO_INCREMENT PRIMARY KEY,
 
-    patient_id INT,
-    doctor_id INT,
+    patient_id INT NOT NULL,
+    doctor_id INT NOT NULL,
 
-    appointment_date DATE,
-    appointment_time TIME,
+    appointment_date DATE NOT NULL,
+    appointment_time TIME NOT NULL,
 
     status VARCHAR(20) DEFAULT 'Pending',
 
     FOREIGN KEY (patient_id)
-        REFERENCES patients(patient_id),
+    REFERENCES patients(patient_id),
 
     FOREIGN KEY (doctor_id)
-        REFERENCES doctors(doctor_id)
+    REFERENCES doctors(doctor_id)
 );
 
--- ==========================
--- SAMPLE DOCTOR DATA
--- ==========================
+-- =====================
+-- INSERT SAMPLE DOCTORS
+-- =====================
 
 INSERT INTO doctors
 (doctor_name, specialization, availability)
 VALUES
-('Dr. Kumar', 'Cardiologist', 'Mon-Fri'),
-('Dr. Priya', 'Dentist', 'Mon-Sat'),
-('Dr. Arun', 'Neurologist', 'Tue-Sat');
+('Dr. Kumar','Cardiologist','Monday-Friday'),
+('Dr. Priya','Dentist','Monday-Saturday'),
+('Dr. Arun','Neurologist','Tuesday-Saturday');
 
--- ==========================
--- SAMPLE PATIENT DATA
--- ==========================
+-- =====================
+-- INSERT SAMPLE PATIENT
+-- =====================
 
 INSERT INTO patients
-(name, email, phone, password)
+(name,email,phone,password)
 VALUES
-('Sakthi', 'sakthi@gmail.com', '9876543210', '12345');
+('Sakthi',
+'sakthi@gmail.com',
+'9876543210',
+'12345');
 
--- ==========================
--- SAMPLE APPOINTMENT DATA
--- ==========================
+-- =====================
+-- INSERT SAMPLE APPOINTMENT
+-- =====================
 
 INSERT INTO appointments
-(patient_id, doctor_id, appointment_date,
- appointment_time, status)
+(patient_id,
+doctor_id,
+appointment_date,
+appointment_time,
+status)
 VALUES
-(1, 1, '2026-06-20', '10:00:00', 'Approved');
+(1,
+1,
+'2026-06-20',
+'10:00:00',
+'Approved');
+
+-- =====================
+-- VIEW DATA
+-- =====================
+
+SELECT * FROM patients;
+
+SELECT * FROM doctors;
+
+SELECT * FROM appointments;
