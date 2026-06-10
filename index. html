@@ -198,6 +198,11 @@ Book Appointment
 <footer>
 <p>© 2026 Hospital Appointment Booking System</p>
 </footer>
+<h2 align="center">Booked Appointments</h2>
+
+<div id="appointmentList"></div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
