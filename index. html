@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,203 +7,42 @@
 <title>Hospital Appointment Booking System</title>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-
 body{
-    background:#f4f7fc;
+    font-family: Arial, sans-serif;
+    background:#f0f8ff;
+    margin:0;
 }
 
 header{
-    background:#0077cc;
+    background:#0066cc;
     color:white;
-    padding:15px;
-}
-
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-}
-
-nav ul li{
-    margin-left:20px;
-}
-
-nav ul li a{
-    text-decoration:none;
-    color:white;
-}
-
-.hero{
     text-align:center;
-    padding:80px 20px;
-    background:white;
+    padding:20px;
 }
 
-.hero h1{
-    color:#0077cc;
-    margin-bottom:15px;
-}
-
-.hero p{
-    margin-bottom:20px;
-}
-
-.btn{
-    background:#0077cc;
-    color:white;
-    padding:12px 25px;
-    border:none;
-    cursor:pointer;
-    border-radius:5px;
-}
-
-.section{
-    padding:50px;
-}
-
-.cards{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
+.container{
+    width:80%;
+    margin:auto;
+    padding:20px;
 }
 
 .card{
     background:white;
-    width:250px;
     padding:20px;
     border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-    text-align:center;
+    box-shadow:0px 0px 10px gray;
+    margin-top:20px;
 }
 
-.card h3{
-    color:#0077cc;
-}
-
-.appointment-form{
-    max-width:500px;
-    margin:auto;
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-.appointment-form input,
-.appointment-form select{
+input, select{
     width:100%;
     padding:10px;
-    margin:10px 0;
+    margin-top:10px;
+    margin-bottom:10px;
 }
 
-footer{
-    background:#0077cc;
+button{
+    background:#0066cc;
     color:white;
-    text-align:center;
-    padding:15px;
-}
-
-</style>
-
-</head>
-<body>
-
-<header>
-<nav>
-<h2>HospitalCare</h2>
-
-<ul>
-<li><a href="#">Home</a></li>
-<li><a href="#">Doctors</a></li>
-<li><a href="#">Appointment</a></li>
-<li><a href="#">Contact</a></li>
-</ul>
-</nav>
-</header>
-
-<section class="hero">
-<h1>Hospital Appointment Booking System</h1>
-<p>Book appointments with experienced doctors anytime.</p>
-<button class="btn">Book Now</button>
-</section>
-
-<section class="section">
-
-<h2 align="center">Our Doctors</h2>
-<br>
-
-<div class="cards">
-
-<div class="card">
-<h3>Dr. Kumar</h3>
-<p>Cardiologist</p>
-</div>
-
-<div class="card">
-<h3>Dr. Priya</h3>
-<p>Dentist</p>
-</div>
-
-<div class="card">
-<h3>Dr. Arun</h3>
-<p>Neurologist</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 align="center">Book Appointment</h2>
-<br>
-
-<form class="appointment-form">
-
-<input type="text" placeholder="Patient Name" required>
-
-<input type="email" placeholder="Email" required>
-
-<select required>
-<option>Select Doctor</option>
-<option>Dr. Kumar</option>
-<option>Dr. Priya</option>
-<option>Dr. Arun</option>
-</select>
-
-<input type="date" required>
-
-<input type="time" required>
-
-<button class="btn" type="submit">
-Book Appointment
-</button>
-
-</form>
-
-</section>
-
-<footer>
-<p>© 2026 Hospital Appointment Booking System</p>
-</footer>
-<h2 align="center">Booked Appointments</h2>
-
-<div id="appointmentList"></div>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+    border:none;
+    padding:
