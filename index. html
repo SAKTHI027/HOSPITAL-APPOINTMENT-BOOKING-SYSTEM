@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Appointment Booking System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <h2>HospitalCare</h2>
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Doctors</a></li>
+                <li><a href="#">Appointment</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Hospital Appointment Booking System</h1>
+
+        <p>
+            Book appointments with expert doctors online.
+            Fast, secure and easy.
+        </p>
+
+        <button>Book Appointment</button>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>About Us</h2>
+
+        <p>
+            Our hospital provides quality healthcare services
+            with experienced doctors and modern facilities.
+        </p>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="doctors">
+
+        <h2>Our Doctors</h2>
+
+        <div class="doctor-container">
+
+            <div class="doctor-card">
+                <h3>Dr. Kumar</h3>
+                <p>Cardiologist</p>
+                <button>View</button>
+            </div>
+
+            <div class="doctor-card">
+                <h3>Dr. Priya</h3>
+                <p>Dentist</p>
+                <button>View</button>
+            </div>
+
+            <div class="doctor-card">
+                <h3>Dr. Arun</h3>
+                <p>Neurologist</p>
+                <button>View</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Appointment Form -->
+    <section class="appointment">
+
+        <h2>Book Appointment</h2>
+
+        <form>
+
+            <input type="text" placeholder="Patient Name" required>
+
+            <input type="email" placeholder="Email" required>
+
+            <select>
+                <option>Select Doctor</option>
+                <option>Dr. Kumar</option>
+                <option>Dr. Priya</option>
+                <option>Dr. Arun</option>
+            </select>
+
+            <input type="date" required>
+
+            <button type="submit">Book Now</button>
+
+        </form>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Hospital Appointment Booking System</p>
+    </footer>
+
+</body>
+</html>
