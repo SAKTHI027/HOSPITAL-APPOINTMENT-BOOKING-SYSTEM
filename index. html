@@ -64,6 +64,7 @@ button:hover{
     border-radius:5px;
     display:none;
 }
+<link rel="stylesheet" href="style.css">
 </style>
 </head>
 
