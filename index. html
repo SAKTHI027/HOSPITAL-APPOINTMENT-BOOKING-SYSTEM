@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +21,7 @@ header{
 
 .container{
     width:80%;
+    max-width:600px;
     margin:auto;
     padding:20px;
 }
@@ -30,7 +30,7 @@ header{
     background:white;
     padding:20px;
     border-radius:10px;
-    box-shadow:0px 0px 10px gray;
+    box-shadow:0 0 10px gray;
     margin-top:20px;
 }
 
@@ -39,10 +39,87 @@ input, select{
     padding:10px;
     margin-top:10px;
     margin-bottom:10px;
+    box-sizing:border-box;
 }
 
 button{
     background:#0066cc;
     color:white;
     border:none;
-    padding:
+    padding:12px 20px;
+    cursor:pointer;
+    border-radius:5px;
+    width:100%;
+    font-size:16px;
+}
+
+button:hover{
+    background:#004c99;
+}
+
+#result{
+    margin-top:20px;
+    padding:15px;
+    background:#e6ffe6;
+    border-radius:5px;
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Hospital Appointment Booking System</h1>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Book an Appointment</h2>
+
+        <input type="text" id="patientName" placeholder="Enter Patient Name" required>
+
+        <input type="number" id="patientAge" placeholder="Enter Age" required>
+
+        <select id="doctor">
+            <option value="">Select Doctor</option>
+            <option>Dr. Smith - Cardiologist</option>
+            <option>Dr. John - Neurologist</option>
+            <option>Dr. Priya - Pediatrician</option>
+            <option>Dr. Kumar - General Physician</option>
+        </select>
+
+        <input type="date" id="appointmentDate">
+
+        <button onclick="bookAppointment()">Book Appointment</button>
+
+        <div id="result"></div>
+    </div>
+</div>
+
+<script>
+function bookAppointment() {
+    let name = document.getElementById("patientName").value;
+    let age = document.getElementById("patientAge").value;
+    let doctor = document.getElementById("doctor").value;
+    let date = document.getElementById("appointmentDate").value;
+
+    if(name === "" || age === "" || doctor === "" || date === "") {
+        alert("Please fill all fields.");
+        return;
+    }
+
+    let result = document.getElementById("result");
+
+    result.style.display = "block";
+    result.innerHTML =
+        "<h3>Appointment Confirmed!</h3>" +
+        "<p><strong>Name:</strong> " + name + "</p>" +
+        "<p><strong>Age:</strong> " + age + "</p>" +
+        "<p><strong>Doctor:</strong> " + doctor + "</p>" +
+        "<p><strong>Date:</strong> " + date + "</p>";
+}
+</script>
+
+</body>
+</html>
