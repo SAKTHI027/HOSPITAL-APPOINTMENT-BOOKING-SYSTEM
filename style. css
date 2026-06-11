@@ -1,56 +1,102 @@
--- Create Database
-CREATE DATABASE IF NOT EXISTS hospital_db;
-USE hospital_db;
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+}
 
--- Patients Table
-CREATE TABLE IF NOT EXISTS patients (
-    patient_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    phone VARCHAR(15) NOT NULL,
-    password VARCHAR(100) NOT NULL
-);
+/* Header */
+header {
+    background-color: #0066cc;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 
--- Doctors Table
-CREATE TABLE IF NOT EXISTS doctors (
-    doctor_id INT AUTO_INCREMENT PRIMARY KEY,
-    doctor_name VARCHAR(100) NOT NULL,
-    specialization VARCHAR(100) NOT NULL,
-    availability VARCHAR(100) NOT NULL
-);
+header h1 {
+    margin: 0;
+}
 
--- Appointments Table
-CREATE TABLE IF NOT EXISTS appointments (
-    appointment_id INT AUTO_INCREMENT PRIMARY KEY,
-    patient_id INT NOT NULL,
-    doctor_id INT NOT NULL,
-    appointment_date DATE NOT NULL,
-    appointment_time TIME NOT NULL,
-    status VARCHAR(20) DEFAULT 'Pending',
-    
-    FOREIGN KEY (patient_id) REFERENCES patients(patient_id),
-    FOREIGN KEY (doctor_id) REFERENCES doctors(doctor_id)
-);
+/* Main Container */
+.container {
+    width: 500px;
+    margin: 30px auto;
+}
 
--- Sample Doctors
-INSERT INTO doctors (doctor_name, specialization, availability)
-VALUES
-('Dr. Kumar', 'Cardiologist', 'Mon-Fri'),
-('Dr. Priya', 'Dentist', 'Mon-Sat'),
-('Dr. Arun', 'Neurologist', 'Tue-Sat');
+/* Form Card */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
 
--- Sample Patient
-INSERT INTO patients (name, email, phone, password)
-VALUES
-('Sakthi', 'sakthi@gmail.com', '9876543210', '123456');
+/* Labels */
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
 
--- Sample Appointment
-INSERT INTO appointments
-(patient_id, doctor_id, appointment_date, appointment_time, status)
-VALUES
-(1, 1, '2026-06-20', '10:00:00', 'Approved');
+/* Inputs and Select */
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
 
--- View Data
-SELECT * FROM patients;
-SELECT * FROM doctors;
-SELECT * FROM appointments;
+/* Button */
+button {
+    width: 100%;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #004c99;
+}
+
+/* Appointment List */
+.appointments {
+    margin-top: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.appointments h2 {
+    margin-top: 0;
+}
+
+#appointmentList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#appointmentList li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#appointmentList li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+}
