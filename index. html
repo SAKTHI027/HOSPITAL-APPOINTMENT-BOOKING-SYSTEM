@@ -121,6 +121,6 @@ function bookAppointment() {
         "<p><strong>Date:</strong> " + date + "</p>";
 }
 </script>
-
+<script src="script.js"></script>
 </body>
 </html>
