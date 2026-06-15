@@ -1,0 +1,13 @@
+ER Diagram - Hospital Appointment Booking System
++------------------+        +---------------------+        +------------------+
+|     PATIENT      |        |    APPOINTMENT      |        |      DOCTOR      |
++------------------+        +---------------------+        +------------------+
+| PK Patient_ID    |<------>| PK Appointment_ID   |<------>| PK Doctor_ID     |
+| Name             |        | FK Patient_ID       |        | Doctor_Name      |
+| Email            |        | FK Doctor_ID        |        | Specialization   |
+| Phone            |        | Appointment_Date    |        | Availability     |
+| Password         |        | Status              |        +------------------+
++------------------+        +---------------------+
+
+Relationship:
+PATIENT (1) -------- (M) APPOINTMENT (M) -------- (1) DOCTOR
