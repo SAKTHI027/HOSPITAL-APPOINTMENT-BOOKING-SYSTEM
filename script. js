@@ -5,14 +5,15 @@ function bookAppointment() {
     let doctor = document.getElementById("doctor").value;
     let date = document.getElementById("appointmentDate").value;
 
-    if (!name || !age || !doctor || !date) {
+    if (name === "" || age === "" || doctor === "" || date === "") {
         alert("Please fill all fields.");
         return;
     }
 
-    const result = document.getElementById("result");
+    let result = document.getElementById("result");
 
     result.style.display = "block";
+
     result.innerHTML = `
         <h3>Appointment Confirmed!</h3>
         <p><strong>Name:</strong> ${name}</p>
