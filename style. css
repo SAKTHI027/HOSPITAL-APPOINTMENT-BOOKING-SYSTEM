@@ -24,19 +24,12 @@ header h1 {
     margin: 30px auto;
 }
 
-/* Form Card */
-form {
+/* Card */
+.card {
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-}
-
-/* Labels */
-label {
-    font-weight: bold;
-    display: block;
-    margin-top: 10px;
 }
 
 /* Inputs and Select */
@@ -67,34 +60,16 @@ button:hover {
     background-color: #004c99;
 }
 
-/* Appointment List */
-.appointments {
+/* Result Box */
+#result {
+    display: none;
     margin-top: 20px;
-    background: white;
+    background: #e6ffe6;
     padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
 }
 
-.appointments h2 {
-    margin-top: 0;
-}
-
-#appointmentList {
-    list-style-type: none;
-    padding: 0;
-}
-
-#appointmentList li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-#appointmentList li:last-child {
-    border-bottom: none;
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 600px) {
     .container {
         width: 90%;
