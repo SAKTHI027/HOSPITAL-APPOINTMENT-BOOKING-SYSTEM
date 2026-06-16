@@ -1,242 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare Connect - Smart Healthcare Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-<nav class="navbar">
-    <div class="logo">🏥 MediCare Connect</div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">🏥 MediCare Connect</div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="#appointment">Appointment</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Your Health, Our Priority</h1>
+
+            <p>
+                Advanced Healthcare Solutions with Expert Doctors,
+                Modern Facilities and 24/7 Emergency Care.
+            </p>
+
+            <a href="#appointment" class="btn">
+                Book Appointment
+            </a>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="stats">
+
+        <div class="stat-card">
+            <h2>150+</h2>
+            <p>Doctors</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>25+</h2>
+            <p>Departments</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>10K+</h2>
+            <p>Patients Treated</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>24/7</h2>
+            <p>Emergency Service</p>
+        </div>
+
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <h2>About MediCare Hospital</h2>
+
+        <p>
+            MediCare Hospital is one of the leading healthcare institutions
+            providing advanced medical care, experienced specialists,
+            modern equipment and patient-centered treatment.
+        </p>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+
+        <h2>Our Services</h2>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <h3>❤️ Cardiology</h3>
+                <p>Heart Care Specialists</p>
+            </div>
+
+            <div class="service-card">
+                <h3>🧠 Neurology</h3>
+                <p>Brain & Nerve Treatment</p>
+            </div>
 
-```
-<ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#doctors">Doctors</a></li>
-    <li><a href="#appointment">Appointment</a></li>
-    <li><a href="#contact">Contact</a></li>
-</ul>
-```
+            <div class="service-card">
+                <h3>🦴 Orthopedics</h3>
+                <p>Bone & Joint Care</p>
+            </div>
 
-</nav>
+            <div class="service-card">
+                <h3>👶 Pediatrics</h3>
+                <p>Child Healthcare</p>
+            </div>
 
-<section class="hero" id="home">
+        </div>
 
-```
-<div class="hero-content">
+    </section>
 
-    <h1>Your Health, Our Priority</h1>
+    <!-- Doctors -->
+    <section id="doctors" class="doctors">
 
-    <p>
-        Advanced Healthcare Solutions with Expert Doctors,
-        Modern Facilities and 24/7 Emergency Care.
-    </p>
+        <h2>Meet Our Specialists</h2>
 
-    <a href="#appointment" class="btn">
-        Book Appointment
-    </a>
+        <div class="doctor-grid">
 
-</div>
-```
+            <div class="doctor-card">
+                <div class="doctor-img">👨‍⚕️</div>
+                <h3>Dr. Smith</h3>
+                <p>Cardiologist</p>
+                <span>15 Years Experience</span>
+            </div>
 
-</section>
+            <div class="doctor-card">
+                <div class="doctor-img">👩‍⚕️</div>
+                <h3>Dr. Priya</h3>
+                <p>Pediatrician</p>
+                <span>10 Years Experience</span>
+            </div>
 
-<section class="stats">
-
-```
-<div class="stat-card">
-    <h2>150+</h2>
-    <p>Doctors</p>
-</div>
-
-<div class="stat-card">
-    <h2>25+</h2>
-    <p>Departments</p>
-</div>
-
-<div class="stat-card">
-    <h2>10K+</h2>
-    <p>Patients Treated</p>
-</div>
-
-<div class="stat-card">
-    <h2>24/7</h2>
-    <p>Emergency Service</p>
-</div>
-```
+            <div class="doctor-card">
+                <div class="doctor-img">👨‍⚕️</div>
+                <h3>Dr. John</h3>
+                <p>Neurologist</p>
+                <span>12 Years Experience</span>
+            </div>
 
-</section>
+            <div class="doctor-card">
+                <div class="doctor-img">👨‍⚕️</div>
+                <h3>Dr. Kumar</h3>
+                <p>General Physician</p>
+                <span>18 Years Experience</span>
+            </div>
 
-<section id="about" class="about">
+        </div>
 
-```
-<h2>About MediCare Hospital</h2>
+    </section>
 
-<p>
-    MediCare Hospital is one of the leading healthcare institutions
-    providing advanced medical care, experienced specialists and
-    patient-centered treatment.
-</p>
-```
+    <!-- Appointment -->
+    <section id="appointment">
 
-</section>
+        <div class="container">
 
-<section id="services" class="services">
+            <div class="card">
 
-```
-<h2>Our Services</h2>
+                <h2>Book Appointment</h2>
 
-<div class="service-grid">
+                <input type="text"
+                       id="patientName"
+                       placeholder="Enter Patient Name">
 
-    <div class="service-card">
-        ❤️
-        <h3>Cardiology</h3>
-        <p>Heart Care Specialists</p>
-    </div>
+                <input type="number"
+                       id="patientAge"
+                       placeholder="Enter Age">
 
-    <div class="service-card">
-        🧠
-        <h3>Neurology</h3>
-        <p>Brain & Nerve Treatment</p>
-    </div>
+                <select id="doctor">
+                    <option>Select Doctor</option>
+                    <option>Dr. Smith</option>
+                    <option>Dr. John</option>
+                    <option>Dr. Priya</option>
+                    <option>Dr. Kumar</option>
+                </select>
 
-    <div class="service-card">
-        🦴
-        <h3>Orthopedics</h3>
-        <p>Bone & Joint Care</p>
-    </div>
+                <input type="date"
+                       id="appointmentDate">
 
-    <div class="service-card">
-        👶
-        <h3>Pediatrics</h3>
-        <p>Child Healthcare</p>
-    </div>
+                <button onclick="bookAppointment()">
+                    Book Appointment
+                </button>
 
-</div>
-```
+                <div id="result"></div>
 
-</section>
+            </div>
 
-<section id="doctors" class="doctors">
+        </div>
 
-```
-<h2>Meet Our Specialists</h2>
+    </section>
 
-<div class="doctor-grid">
+    <!-- Reviews -->
+    <section class="reviews">
 
-    <div class="doctor-card">
-        <div class="doctor-img">👨‍⚕️</div>
-        <h3>Dr. Smith</h3>
-        <p>Cardiologist</p>
-        <span>15 Years Experience</span>
-    </div>
+        <h2>Patient Reviews</h2>
 
-    <div class="doctor-card">
-        <div class="doctor-img">👩‍⚕️</div>
-        <h3>Dr. Priya</h3>
-        <p>Pediatrician</p>
-        <span>10 Years Experience</span>
-    </div>
+        <div class="review-grid">
 
-    <div class="doctor-card">
-        <div class="doctor-img">👨‍⚕️</div>
-        <h3>Dr. John</h3>
-        <p>Neurologist</p>
-        <span>12 Years Experience</span>
-    </div>
+            <div class="review-card">
+                ⭐⭐⭐⭐⭐
+                <p>Excellent treatment and caring doctors.</p>
+            </div>
 
-    <div class="doctor-card">
-        <div class="doctor-img">👨‍⚕️</div>
-        <h3>Dr. Kumar</h3>
-        <p>General Physician</p>
-        <span>18 Years Experience</span>
-    </div>
+            <div class="review-card">
+                ⭐⭐⭐⭐⭐
+                <p>Fast appointment booking and quality service.</p>
+            </div>
 
-</div>
-```
+            <div class="review-card">
+                ⭐⭐⭐⭐⭐
+                <p>Modern facilities and friendly staff.</p>
+            </div>
 
-</section>
+        </div>
 
-<section id="appointment">
+    </section>
 
-```
-<div class="container">
+    <!-- Contact -->
+    <section id="contact" class="contact">
 
-    <div class="card">
+        <h2>Contact Us</h2>
 
-        <h2>Book Appointment</h2>
+        <p>📍 Tirunelveli, Tamil Nadu</p>
+        <p>📞 +91 9876543210</p>
+        <p>✉ support@medicare.com</p>
 
-        <input type="text"
-               id="patientName"
-               placeholder="Enter Patient Name">
+    </section>
 
-        <input type="number"
-               id="patientAge"
-               placeholder="Enter Age">
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 MediCare Connect | All Rights Reserved</p>
+    </footer>
 
-        <select id="doctor">
-            <option>Select Doctor</option>
-            <option>Dr. Smith</option>
-            <option>Dr. John</option>
-            <option>Dr. Priya</option>
-            <option>Dr. Kumar</option>
-        </select>
-
-        <input type="date"
-               id="appointmentDate">
-
-        <button onclick="bookAppointment()">
-            Book Appointment
-        </button>
-
-        <div id="result"></div>
-
-    </div>
-
-</div>
-```
-
-</section>
-
-<section class="reviews">
-
-```
-<h2>Patient Reviews</h2>
-
-<div class="review-grid">
-
-    <div class="review-card">
-        ⭐⭐⭐⭐⭐
-        <p>Excellent treatment and caring doctors.</p>
-    </div>
-
-    <div class="review-card">
-        ⭐⭐⭐⭐⭐
-        <p>Fast appointment booking and quality service.</p>
-    </div>
-
-    <div class="review-card">
-        ⭐⭐⭐⭐⭐
-        <p>Modern facilities and friendly staff.</p>
-    </div>
-
-</div>
-```
-
-</section>
-
-<section id="contact" class="contact">
-
-```
-<h2>Contact Us</h2>
-
-<p>📍 Tirunelveli, Tamil Nadu</p>
-<p>📞 +91 9876543210</p>
-<p>✉ support@medicare.com</p>
-```
-
-</section>
-
-<footer>
-    <p>© 2026 MediCare Connect | All Rights Reserved</p>
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+</html>
