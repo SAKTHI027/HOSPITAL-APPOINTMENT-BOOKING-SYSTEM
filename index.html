@@ -1,48 +1,154 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Appointment Booking System</title>
-
-    <!-- CSS Link -->
-    <link rel="stylesheet" href="style.css">
-</head>
-
 <body>
 
-<header>
-    <h1>🏥 Hospital Appointment Booking System</h1>
-</header>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">🏥 MediCare Hospital</div>
 
-<div class="container">
-    <div class="card">
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="#appointment">Appointment</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-        <h2>Book an Appointment</h2>
+    <!-- Hero Section -->
+    <section class="hero">
 
-        <input type="text" id="patientName" placeholder="Enter Patient Name">
+        <div class="hero-content">
 
-        <input type="number" id="patientAge" placeholder="Enter Age">
+            <h1>Your Health, Our Priority</h1>
 
-        <select id="doctor">
-            <option value="">Select Doctor</option>
-            <option>Dr. Smith - Cardiologist</option>
-            <option>Dr. John - Neurologist</option>
-            <option>Dr. Priya - Pediatrician</option>
-            <option>Dr. Kumar - General Physician</option>
-        </select>
+            <p>
+                Advanced Healthcare Solutions with
+                Expert Doctors and Modern Facilities.
+            </p>
 
-        <input type="date" id="appointmentDate">
+            <a href="#appointment" class="btn">
+                Book Appointment
+            </a>
 
-        <button onclick="bookAppointment()">Book Appointment</button>
+        </div>
 
-        <div id="result"></div>
+    </section>
 
-    </div>
-</div>
+    <!-- Statistics -->
+    <section class="stats">
 
-<!-- JavaScript Link -->
-<script src="script.js"></script>
+        <div class="stat-card">
+            <h2>150+</h2>
+            <p>Doctors</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>25+</h2>
+            <p>Departments</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>10K+</h2>
+            <p>Patients</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>24/7</h2>
+            <p>Emergency Care</p>
+        </div>
+
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="services">
+
+        <h2>Our Services</h2>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                ❤️
+                <h3>Cardiology</h3>
+                <p>Heart Care Specialists</p>
+            </div>
+
+            <div class="service-card">
+                🧠
+                <h3>Neurology</h3>
+                <p>Brain & Nerve Treatment</p>
+            </div>
+
+            <div class="service-card">
+                🦴
+                <h3>Orthopedics</h3>
+                <p>Bone & Joint Care</p>
+            </div>
+
+            <div class="service-card">
+                👶
+                <h3>Pediatrics</h3>
+                <p>Child Healthcare</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Appointment Section -->
+    <section id="appointment">
+
+        <div class="container">
+
+            <div class="card">
+
+                <h2>Book an Appointment</h2>
+
+                <input type="text"
+                       id="patientName"
+                       placeholder="Enter Patient Name">
+
+                <input type="number"
+                       id="patientAge"
+                       placeholder="Enter Age">
+
+                <select id="doctor">
+                    <option>Select Doctor</option>
+                    <option>Dr. Smith</option>
+                    <option>Dr. John</option>
+                    <option>Dr. Priya</option>
+                    <option>Dr. Kumar</option>
+                </select>
+
+                <input type="date"
+                       id="appointmentDate">
+
+                <button onclick="bookAppointment()">
+                    Book Appointment
+                </button>
+
+                <div id="result"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>📍 tirunelveli, Tamil Nadu</p>
+        <p>📞 +91 9876543210</p>
+        <p>✉ support@medicare.com</p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 MediCare Hospital | All Rights Reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
-</html>
