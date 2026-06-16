@@ -1,24 +1,47 @@
 function bookAppointment() {
 
-    let name = document.getElementById("patientName").value;
-    let age = document.getElementById("patientAge").value;
-    let doctor = document.getElementById("doctor").value;
-    let date = document.getElementById("appointmentDate").value;
+    let patientName =
+        document.getElementById("patientName").value;
 
-    if (name === "" || age === "" || doctor === "" || date === "") {
-        alert("Please fill all fields.");
+    let patientAge =
+        document.getElementById("patientAge").value;
+
+    let doctor =
+        document.getElementById("doctor").value;
+
+    let appointmentDate =
+        document.getElementById("appointmentDate").value;
+
+    if (
+        patientName === "" ||
+        patientAge === "" ||
+        doctor === "Select Doctor" ||
+        appointmentDate === ""
+    ) {
+        alert("Please fill all fields!");
         return;
     }
 
-    let result = document.getElementById("result");
+    document.getElementById("result").innerHTML =
+        `
+        <div style="
+            margin-top:20px;
+            padding:15px;
+            background:#d4edda;
+            color:#155724;
+            border-radius:5px;
+        ">
+            ✅ Appointment Booked Successfully!<br><br>
 
-    result.style.display = "block";
+            <strong>Patient:</strong> ${patientName}<br>
+            <strong>Age:</strong> ${patientAge}<br>
+            <strong>Doctor:</strong> ${doctor}<br>
+            <strong>Date:</strong> ${appointmentDate}
+        </div>
+        `;
 
-    result.innerHTML = `
-        <h3>Appointment Confirmed!</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Age:</strong> ${age}</p>
-        <p><strong>Doctor:</strong> ${doctor}</p>
-        <p><strong>Date:</strong> ${date}</p>
-    `;
+    document.getElementById("patientName").value = "";
+    document.getElementById("patientAge").value = "";
+    document.getElementById("doctor").selectedIndex = 0;
+    document.getElementById("appointmentDate").value = "";
 }
